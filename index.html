@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amrita Malik — Portfolio</title>
+  <meta name="description" content="Amrita Malik — building immersive and futuristic web experiences."/>
+  <meta property="og:title" content="Amrita Malik — Portfolio"/>
+  <meta property="og:description" content="I build immersive and futuristic web experiences"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- WebGL Background Canvas -->
+<canvas id="bg-canvas"></canvas>
+
+<!-- Navigation -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">AM</a>
+  <ul class="nav-links">
+    <li><a href="#about" id="nav-about">About</a></li>
+    <li><a href="#skills" id="nav-skills">Skills</a></li>
+    <li><a href="#projects" id="nav-projects">Projects</a></li>
+    <li><a href="#journey" id="nav-journey">Journey</a></li>
+    <li><a href="#contact" id="nav-contact">Contact</a></li>
+  </ul>
+  <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <a href="#about" class="mobile-nav-link">About</a>
+  <a href="#skills" class="mobile-nav-link">Skills</a>
+  <a href="#projects" class="mobile-nav-link">Projects</a>
+  <a href="#journey" class="mobile-nav-link">Journey</a>
+  <a href="#contact" class="mobile-nav-link">Contact</a>
+</div>
+
+<!-- Project Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-card" id="modal-card">
+    <button class="modal-close" id="modal-close">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section id="hero">
+    <canvas class="section-bg" id="bg-hero-fog"></canvas>
+    <div class="hero-grid">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">✦ Based in India — Available Globally</p>
+        <h1 class="hero-title">Amrita<br/><span class="name-gradient">Malik</span></h1>
+        <p class="hero-subtitle">Aspiring Software Engineer crafting intelligent and scalable solutions.</p>
+        <div class="typewriter-container">
+          <span class="typewriter-prefix">Passionate about →</span>
+          <span class="typewriter-text" id="typewriter"></span>
+        </div>
+        <div class="hero-cta">
+          <div class="magnetic-wrap">
+            <a href="#projects" class="btn btn-primary" id="cta-work">
+              Explore My Work
+              <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            </a>
+          </div>
+          <div class="magnetic-wrap">
+            <a href="#contact" class="btn btn-ghost" id="cta-contact">Get in Touch</a>
+          </div>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/AmritaMalik" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/amrita-malik-2007am/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:codewithamrita@gmail.com" class="social-link" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
+        <div class="scroll-indicator">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+
+      <div class="hero-cat-wrap" id="hero-3d-anchor">
+        <!-- 3D object will be rendered via Three.js canvas in the background, but this empty div keeps the CSS grid layout balanced -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <canvas class="section-bg" id="bg-about"></canvas>
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="section-label">About Me</p>
+        <h2 class="section-heading">Passionate about <span>crafting digital experiences</span></h2>
+        <p class="about-text">I'm a first-year Computer Science student with a growing passion for programming, design, and the intersection of both. I thrive on learning new concepts, building creative projects, and improving my problem-solving skills step by step.</p>
+        <p class="about-text">Member of <strong>Google Developer Groups</strong>, I'm on a mission to turn logic into meaningful, beautiful solutions — and I'm just getting started.</p>
+        <p class="about-text">I enjoy building things that feel alive — where interaction has weight, motion has meaning, and every pixel serves a purpose.</p>
+        <div class="about-badges">
+          <span class="badge"><span class="badge-dot"></span>Computer Science Student</span>
+          <span class="badge"><span class="badge-dot"></span>Google Developer Groups</span>
+          <span class="badge"><span class="badge-dot"></span>15× Cloud Badges</span>
+          <span class="badge"><span class="badge-dot"></span>Open Source Enthusiast</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="glass-card floating">
+          <p class="section-label">My Motivation</p>
+          <blockquote class="about-quote">"Every expert was once a beginner who didn't quit."</blockquote>
+          <p class="about-text" style="margin-bottom:28px;">Welcome to my journey in computer science, where I explore ideas, build projects, and turn logic into meaningful solutions. Each project is a step forward.</p>
+          <div class="about-stats">
+            <div class="stat-item"><div class="stat-number">5+</div><div class="stat-label">Projects</div></div>
+            <div class="stat-item"><div class="stat-number">15</div><div class="stat-label">Cloud Badges</div></div>
+            <div class="stat-item"><div class="stat-number">3+</div><div class="stat-label">Languages</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <canvas class="section-bg" id="bg-skills"></canvas>
+    <p class="section-label reveal">Skills &amp; Tools</p>
+    <h2 class="section-heading reveal reveal-delay-1">My <span>Technical</span> Universe</h2>
+    <p class="skills-intro reveal reveal-delay-2">A growing collection of technologies — each learned with purpose and curiosity. Hover to feel the pull.</p>
+    <div class="skills-float-arena" id="skills-arena">
+      <div class="skills-center-node">AM</div>
+      <span class="float-tag" data-cat="lang"   style="--bx:50%;--by:50%;--ox:-260px;--oy:-140px">C</span>
+      <span class="float-tag" data-cat="lang"   style="--bx:50%;--by:50%;--ox:-180px;--oy:-220px">C++</span>
+      <span class="float-tag" data-cat="lang"   style="--bx:50%;--by:50%;--ox:60px;--oy:-170px">Python</span>
+      <span class="float-tag" data-cat="lang"   style="--bx:50%;--by:50%;--ox:-160px;--oy:100px">JavaScript</span>
+      <span class="float-tag" data-cat="web"    style="--bx:50%;--by:50%;--ox:180px;--oy:-90px">HTML</span>
+      <span class="float-tag" data-cat="web"    style="--bx:50%;--by:50%;--ox:-300px;--oy:40px">CSS</span>
+      <span class="float-tag" data-cat="web"    style="--bx:50%;--by:50%;--ox:120px;--oy:-240px">React</span>
+      <span class="float-tag" data-cat="web"    style="--bx:50%;--by:50%;--ox:-100px;--oy:200px">Node.js</span>
+      <span class="float-tag" data-cat="web"    style="--bx:50%;--by:50%;--ox:260px;--oy:-160px">Streamlit</span>
+      <span class="float-tag" data-cat="db"     style="--bx:50%;--by:50%;--ox:220px;--oy:180px">SQL</span>
+      <span class="float-tag" data-cat="db"     style="--bx:50%;--by:50%;--ox:-280px;--oy:130px">MongoDB</span>
+      <span class="float-tag" data-cat="tool"   style="--bx:50%;--by:50%;--ox:-240px;--oy:-60px">VS Code</span>
+      <span class="float-tag" data-cat="tool"   style="--bx:50%;--by:50%;--ox:100px;--oy:130px">Git &amp; GitHub</span>
+      <span class="float-tag" data-cat="tool"   style="--bx:50%;--by:50%;--ox:280px;--oy:20px">Linux</span>
+      <span class="float-tag" data-cat="cloud"  style="--bx:50%;--by:50%;--ox:-80px;--oy:-150px">Google Cloud</span>
+      <span class="float-tag" data-cat="cloud"  style="--bx:50%;--by:50%;--ox:300px;--oy:60px">AWS</span>
+      <span class="float-tag" data-cat="ai"     style="--bx:50%;--by:50%;--ox:-320px;--oy:-130px">Generative AI</span>
+      <span class="float-tag" data-cat="ai"     style="--bx:50%;--by:50%;--ox:200px;--oy:100px">NLP</span>
+      <span class="float-tag" data-cat="other"  style="--bx:50%;--by:50%;--ox:-200px;--oy:190px">Autodesk Fusion</span>
+      <span class="float-tag" data-cat="other"  style="--bx:50%;--by:50%;--ox:20px;--oy:-200px">Problem Solving</span>
+      <span class="float-tag" data-cat="other"  style="--bx:50%;--by:50%;--ox:320px;--oy:-50px">Algorithms</span>
+      <span class="float-tag" data-cat="other"  style="--bx:50%;--by:50%;--ox:80px;--oy:220px">UI/UX</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <canvas class="section-bg" id="bg-projects"></canvas>
+    
+    <!-- ACTIVE PROJECTS -->
+    <div class="projects-header reveal">
+      <div>
+        <p class="section-label">Featured Work</p>
+        <h2 class="section-heading">Active <span>Projects</span></h2>
+      </div>
+      <a href="https://github.com/AmritaMalik" target="_blank" rel="noopener" class="btn btn-ghost">View All on GitHub →</a>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card project-card-featured reveal" data-project="0">
+        <div class="project-glow"></div>
+        <div class="project-image"><img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80" alt="AI Note Summarizer"></div>
+        <div class="project-number">01 — FEATURED</div>
+        <h3 class="project-title">AI Note Summarizer</h3>
+        <p class="project-desc">A smart AI-driven tool that leverages basic NLP to automatically summarize long lecture notes into concise bullet points and generate key study flashcards.</p>
+        <div class="project-tech">
+          <span class="tech-chip">Python</span><span class="tech-chip">NLP</span><span class="tech-chip">Streamlit</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/AmritaMalik/AI_note_making" target="_blank" rel="noopener" class="project-link">⬥ Source Code</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1" data-project="1">
+        <div class="project-glow"></div>
+        <div class="project-image"><img src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?auto=format&fit=crop&w=600&q=80" alt="Task Tracker"></div>
+        <div class="project-number">02</div>
+        <h3 class="project-title">Drag & Drop Task Tracker</h3>
+        <p class="project-desc">A responsive, interactive to-do list web app allowing users to add, remove, and intuitively reorder tasks using custom drag-and-drop mechanics.</p>
+        <div class="project-tech">
+          <span class="tech-chip">HTML5</span><span class="tech-chip">CSS3</span><span class="tech-chip">JavaScript</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/AmritaMalik/Dragable_TO_Do_list" target="_blank" rel="noopener" class="project-link">⬥ Source Code</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-2" data-project="2">
+        <div class="project-glow"></div>
+        <div class="project-image"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="C Grade Calculator"></div>
+        <div class="project-number">03</div>
+        <h3 class="project-title">C Grade Calculator</h3>
+        <p class="project-desc">A lightweight, efficient C program that calculates a student's overall grade, determining averages and assigning letter grades based on subjects.</p>
+        <div class="project-tech">
+          <span class="tech-chip">C Programming</span><span class="tech-chip">Algorithms</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/AmritaMalik/calculators" target="_blank" rel="noopener" class="project-link">⬥ Source Code</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1" data-project="3">
+        <div class="project-glow"></div>
+        <div class="project-image"><img src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?auto=format&fit=crop&w=600&q=80" alt="Interactive Portfolio"></div>
+        <div class="project-number">04</div>
+        <h3 class="project-title">Interactive Portfolio</h3>
+        <p class="project-desc">A creative personal portfolio site featuring custom 3D WebGL animations and smooth interactions to showcase my learning journey as a computer science student.</p>
+        <div class="project-tech">
+          <span class="tech-chip">HTML/CSS</span><span class="tech-chip">Three.js</span><span class="tech-chip">JavaScript</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">⬥ Live Demo</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- UNDER DEVELOPMENT -->
+    <div class="projects-header reveal" style="margin-top:100px;">
+      <div>
+        <p class="section-label">Coming Soon</p>
+        <h2 class="section-heading">Under <span>Development</span></h2>
+      </div>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal reveal-delay-1" data-project="4" style="opacity:0.6; filter:grayscale(0.3);">
+        <div class="project-glow"></div>
+        <div class="project-image"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="Discord Bot"></div>
+        <div class="project-number">WIP</div>
+        <h3 class="project-title">Discord Utility Bot</h3>
+        <p class="project-desc">A custom Discord bot built to automate server moderation, assign roles dynamically based on reactions, and fetch live tech news via external APIs.</p>
+        <div class="project-tech">
+          <span class="tech-chip">Node.js</span><span class="tech-chip">Discord.js</span><span class="tech-chip">REST API</span>
+        </div>
+        <div class="project-links">
+          <span class="project-link" style="border-color:transparent; padding:0;">In Progress...</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-2" data-project="5" style="opacity:0.6; filter:grayscale(0.3);">
+        <div class="project-glow"></div>
+        <div class="project-image"><img src="https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&w=600&q=80" alt="Weather App"></div>
+        <div class="project-number">WIP</div>
+        <h3 class="project-title">Dynamic Weather App</h3>
+        <p class="project-desc">A responsive application fetching real-time weather forecasts via the OpenWeather API. Features city search and dynamic backgrounds based on conditions.</p>
+        <div class="project-tech">
+          <span class="tech-chip">React</span><span class="tech-chip">REST API</span><span class="tech-chip">Tailwind</span>
+        </div>
+        <div class="project-links">
+          <span class="project-link" style="border-color:transparent; padding:0;">In Progress...</span>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+  </section>
+
+  <!-- JOURNEY -->
+  <section id="journey" style="position:relative; overflow:hidden;">
+    <canvas class="section-bg" id="bg-journey"></canvas>
+    
+    <!-- FLOATING PURPLE PLANET -->
+    <img src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?auto=format&fit=crop&w=800&q=80" alt="Purple Planet Background" style="position:absolute; right:-15%; top:10%; width:600px; height:600px; object-fit:cover; border-radius:50%; filter:brightness(0.6) contrast(1.2) drop-shadow(0 0 60px rgba(124,58,237,0.4)); mix-blend-mode:screen; animation:float 12s ease-in-out infinite; pointer-events:none; z-index:0; mask-image:radial-gradient(circle, black 50%, transparent 70%); -webkit-mask-image:radial-gradient(circle, black 50%, transparent 70%);">
+
+    <p class="section-label reveal" style="position:relative; z-index:1;">Experience &amp; Milestones</p>
+    <h2 class="section-heading reveal reveal-delay-1" style="position:relative; z-index:1;">My <span>Journey</span></h2>
+    <div class="timeline" style="position:relative; z-index:1;">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">2025 — Present</div>
+        <h3 class="timeline-title">B.Tech in Computer Science</h3>
+        <p class="timeline-org">University — Second Year</p>
+        <p class="timeline-desc">Pursuing CS with focus on programming fundamentals, algorithms, data structures, and software development. Actively building real-world projects alongside academics.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">2024</div>
+        <h3 class="timeline-title">Google Developer Groups Member</h3>
+        <p class="timeline-org">GDG Community</p>
+        <p class="timeline-desc">Joined GDG to connect with like-minded developers, attend workshops, and stay updated with the latest in tech and Google technologies.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">2024</div>
+        <h3 class="timeline-title">Introduction to Generative AI Studio</h3>
+        <p class="timeline-org">Google Cloud × Simplilearn</p>
+        <p class="timeline-desc">Completed certification in Generative AI Studio — foundational knowledge in AI/ML model deployment, prompt engineering, and Google Cloud AI services.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">2024</div>
+        <h3 class="timeline-title">Solutions Architecture Job Simulation</h3>
+        <p class="timeline-org">AWS × Forage</p>
+        <p class="timeline-desc">Hands-on experience with cloud architecture design, scalability principles, and AWS service selection for real-world scenarios.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">2024</div>
+        <h3 class="timeline-title">15 Google Cloud Skill Badges</h3>
+        <p class="timeline-org">Google Cloud Skills Boost</p>
+        <p class="timeline-desc">Earned 15 skill boost badges spanning cloud infrastructure, machine learning, security, and data analytics.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <canvas class="section-bg" id="bg-contact"></canvas>
+    <p class="section-label reveal">Let's Talk</p>
+    <h2 class="section-heading reveal reveal-delay-1">Get in <span>Touch</span></h2>
+    <p class="contact-sub reveal reveal-delay-2">Have a project idea, want to collaborate, or just want to say hi? I'd love to hear from you.</p>
+    <p class="contact-tagline reveal reveal-delay-3">"Let's create something exceptional together."</p>
+
+    <div class="contact-email-block reveal reveal-delay-2">
+      <div class="contact-email-icon">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </div>
+      <div>
+        <div class="contact-email-label">Email</div>
+        <div class="contact-email-value">codewithamrita@gmail.com</div>
+      </div>
+    </div>
+
+    <form class="contact-form reveal reveal-delay-3" id="contact-form" novalidate>
+      <div class="form-row">
+        <div class="form-field">
+          <label class="form-label" for="contact-name">Name</label>
+          <input class="form-input" type="text" id="contact-name" name="name" placeholder="Your name"/>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="contact-email">Email</label>
+          <input class="form-input" type="email" id="contact-email" name="email" placeholder="your@email.com"/>
+        </div>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="contact-subject">Subject</label>
+        <input class="form-input" type="text" id="contact-subject" name="subject" placeholder="What's this about?"/>
+      </div>
+      <div class="form-field">
+        <label class="form-label" for="contact-message">Message</label>
+        <textarea class="form-textarea" id="contact-message" name="message" placeholder="Tell me about your project, idea, or just say hello 👋"></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary btn-breathe" id="submit-btn" style="width:100%;justify-content:center;">
+          Send Message
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <p class="footer-copy">© 2026 Amrita Malik — Crafted with passion &amp; low gravity.</p>
+  <div class="footer-links">
+    <a href="https://github.com/AmritaMalik" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/amrita-malik-2007am/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:codewithamrita@gmail.com">Email</a>
+  </div>
+</footer>
+
+<canvas id="tiny-cat-canvas" style="position:fixed; bottom:30px; right:30px; width:120px; height:120px; z-index:9999; pointer-events:auto; cursor:pointer;"></canvas>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
