@@ -1,4 +1,4 @@
-# 🌌Portfolio of Amrita Malik
+# Portfolio of Amrita Malik
 
 🚀 A next-generation interactive portfolio experience designed as a **living digital environment**, where UI elements behave like they exist in a soft gravitational field of motion, light, and energy.
 
