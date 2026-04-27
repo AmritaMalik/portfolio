@@ -79,4 +79,4 @@ Instead, it introduces:
 
 ## 🚀 Live Demo
 
-👉 Add your deployed link here:
+👉 https://amrita-malik-portfolio.vercel.app
